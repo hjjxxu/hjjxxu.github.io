@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hjjxxu | my stuff </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <header>
+            <div class="avatar">🐛</div>
+            <h1>hii</h1>
+            <p class="username">@hjjxxu</p>
+        </header>
+        
+        <main>
+            <p class="bio">highschool senior | interests: math, cs, origami </p>
+            
+            <div class="links">
+                <a href="https://github.com" target="_blank" class="btn">GitHub Profile</a>
+                <a href="#" class="btn secondary" id="theme-toggle">Toggle Theme</a>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2026 hjjxxu.</p>
+        </footer>
+    </div>
+
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.body.classList.toggle('dark-theme');
+        });
+    </script>
+</body>
+</html>
