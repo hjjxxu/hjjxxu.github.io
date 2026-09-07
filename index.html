@@ -290,6 +290,29 @@
 		const nextBtn = document.querySelector('.next-btn');
 		const dotsContainer = document.getElementById('slideDots');
 
+		// automatically cache slideshow assets at the beginning
+		window.addEventListener('DOMContentLoaded', () => {
+            const allImagesToPreload = [];
+            
+            document.querySelectorAll('.gallery-card').forEach(card => {
+                const onclickAttr = card.getAttribute('onclick');
+                if (onclickAttr) {
+                    const match = onclickAttr.match(/\[(.*?)\]/);
+                    if (match && match[1]) {
+                        const paths = match[1].split(',').map(p => p.replace(/['"\s&apos;]/g, ''));
+                        allImagesToPreload.push(...paths);
+                    }
+                }
+            });
+
+            allImagesToPreload.forEach(path => {
+                if (!path.toLowerCase().endsWith('.mp4') && !path.toLowerCase().endsWith('.webm')) {
+                    const img = new Image();
+                    img.src = path;
+                }
+            });
+        });
+
 		function openModal(title, description, imageArray, timeSpent, dateCreated) {
 			document.getElementById('modalTitle').innerText = title;
 			document.getElementById('modalDesc').innerHTML = description;
