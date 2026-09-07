@@ -1,39 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hjjxxu | my stuff </title>
-    <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>heather xu origami</title>
+	<link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="card">
-        <header>
-            <div class="avatar">🐛</div>
-            <h1>hii</h1>
-            <p class="username">@hjjxxu</p>
-        </header>
-        
-        <main>
-            <p class="bio">highschool senior | interests: math, cs, origami </p>
-            
-            <div class="links">
-                <a href="https://github.com" target="_blank" class="btn">GitHub Profile</a>
-                <a href="#" class="btn secondary" id="theme-toggle">Toggle Theme</a>
-            </div>
-        </main>
-        
-        <footer>
-            <p>© 2026 hjjxxu.</p>
-        </footer>
-    </div>
 
-    <script>
-        const toggle = document.getElementById('theme-toggle');
-        toggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            document.body.classList.toggle('dark-theme');
-        });
-    </script>
+<body class="dark-theme">
+
+	<div class="card intro-card">
+		<header class="header-container-split">
+            
+			<div class="profile-group-left">
+				<div class="avatar-container">
+					<img src="images/avatar.jpeg" alt="Heather Xu" class="profile-avatar">
+				</div>
+
+				<div class="title-details">
+					<h1>heather xu</h1>
+					<p class="username">@hjjxxu</p>
+				</div>
+			</div>
+            
+			<div class="bio-center">
+				<p class="bio">high school senior 📍 canada<br>scroll down to check out what I've been making lately :)</p>
+			</div>
+            
+			<div class="action-buttons-right">
+				<a href="mailto:hxu618@gmail.com" class="icon-btn" title="Contact Me">💌</a>
+				<button id="theme-toggle" class="theme-btn" title="Toggle Theme">⏾</button>
+			</div>
+		</header>
+	</div>
+
+
+	<div class="gallery-container">
+		<h2>My Creations Gallery</h2>
+		<div class="grid">
+            
+			<!-- origami item 1 -->
+			<div class="gallery-card" onclick="openModal('phizz torus', 'second attempt at 360 phizz unit torus<br>tutorial: <a href=\'https://www.matthewdeutsch.com/projects/origami-torus/\' target=\'_blank\'>matthewdeutsch.com/projects/origami-torus/</a>', ['images/torus.png', 'images/torus2.jpeg', 'images/torus3.jpeg'], '~15 hours', 'August 2026')">
+				<div class="image-placeholder">
+					<img src="images/torus.png" alt="phizz torus">
+				</div>
+				<div class="card-info">
+					<h3>phizz torus</h3>
+					<p>360 phizz units</p>
+				</div>
+			</div>
+
+			<!-- origami item 2 -->
+			<div class="gallery-card" onclick="openModal('kusudama paradigma', '30 units, used some tape and glue to hold the units together, Kusudama Paradigma by Ekaterina Lukasheva: <a href=\'https://kusudama.me/origami/Paradigma\' target=\'_blank\'>kusudama.me/origami/Paradigma</a>', ['images/paradigma.png', 'images/paradigma2.jpeg', 'images/paradigma3.jpeg', 'images/paradigma4.mp4'], '~3 hours', 'October 2025')">
+				<div class="image-placeholder">
+					<img src="images/paradigma.png" alt="kusudama paradigma">
+				</div>
+				<div class="card-info">
+					<h3>kusudama paradigma</h3>
+					<p>designed by Ekaterina Lukasheva</p>
+				</div>
+			</div>
+
+			<!-- origami item 3 -->
+			<div class="gallery-card" onclick="openModal('phizz buckyball', 'made of 90 phizz units', ['images/buckyball.png', 'images/buckyball2.jpeg'], '~3 hours', 'January 2023')">
+				<div class="image-placeholder">
+					<img src="images/buckyball.png" alt="phizz buckyball">
+				</div>
+				<div class="card-info">
+					<h3>phizz buckyball</h3>
+					<p>90 phizz units</p>
+				</div>
+			</div>
+
+			<!-- origami item 4 -->
+			<div class="gallery-card" onclick="openModal('flower kusudama', '60 pieces of paper, twelve flowers - five pieces of paper per flower, requires glue', ['images/flowerkusudama.png', 'images/flowerkusudama2.jpeg', 'images/flowerkusudamaassembly.jpg'], '~3 hours', 'December 2022')">
+				<div class="image-placeholder">
+					<img src="images/flowerkusudama.png" alt="flower kusudama">
+				</div>
+				<div class="card-info">
+					<h3>flower kusudama</h3>
+				<p>twelve flowers</p>
+				</div>
+			</div>
+
+			<!-- origami item 5 -->
+			<div class="gallery-card" onclick="openModal('celestial', '30 units, designed by Joseph Hwang: <a href=\'https://www.josephhwangorigami.com/modular#/celestial/\' target=\'_blank\'>https://www.josephhwangorigami.com/modular#/celestial/</a>', ['images/celestial.png', 'images/celestial2.jpg'], '~3 hours', 'June 2024')">
+				<div class="image-placeholder">
+					<img src="images/celestial.png" alt="celestial">
+				</div>
+				<div class="card-info">
+					<h3>celestial</h3>
+					<p>n<sup>th</sup> attempt at celestial by Joseph Hwang</p>
+				</div>
+			</div>
+		
+			<!-- origami item 6 -->
+			<div class="gallery-card" onclick="openModal('phizz torus', '360 phizz units<br>tutorial: <a href=\'https://www.matthewdeutsch.com/projects/origami-torus/\' target=\'_blank\'>matthewdeutsch.com/projects/origami-torus/</a>', ['images/tor.png', 'images/tor2.jpeg', 'images/tor3.jpeg'], '~20 hours', 'February 2024')">
+				<div class="image-placeholder">
+					<img src="images/tor.png" alt="phizz torus">
+				</div>
+				<div class="card-info">
+					<h3>phizz torus</h3>
+					<p>first attempt at 360 unit phizz torus</p>
+				</div>
+			</div>
+
+			<!-- origami item 8 -->
+			<!-- <div class="gallery-card" onclick="openModal('NAME', 'DESCRIPTION', ['images/photo.png', 'images/photo2.jpeg'], 'TIME', 'DATE')">
+				<div class="image-placeholder">
+					<img src="images/photo.png" alt="NAME">
+				</div>
+				<div class="card-info">
+					<h3>NAME</h3>
+					<p>DESCRIPTION</p>
+				</div>
+			</div> -->
+
+			<!-- origami item 7 -->
+			<div class="gallery-card" onclick="openModal('dimpled model with flowers', '30 units, designed by Meenakshi Mukerji: <a href=\'https://origamee.net/about/\' target=\'_blank\'>https://origamee.net/about/</a>', ['images/1dmwflowers.png', 'images/1dmwflowers2.png'], '~3 hours', 'March 2025')">
+				<div class="image-placeholder">
+					<img src="images/1dmwflowers.png" alt="dmwflowers">
+				</div>
+				<div class="card-info">
+					<h3>dimpled model with flowers</h3>
+					<p>designed by Meenakshi Mukerji</p>
+				</div>
+			</div>
+
+			<!-- origami item 11 -->
+			<div class="gallery-card" onclick="openModal('celestial', '30 units, designed by Joseph Hwang: <a href=\'https://www.josephhwangorigami.com/modular#/celestial/\' target=\'_blank\'>https://www.josephhwangorigami.com/modular#/celestial/</a>', ['images/celestialw.png', 'images/celestialw2.jpeg'], '~3 hours', '2024')">
+				<div class="image-placeholder">
+					<img src="images/celestialw.png" alt="celestial">
+				</div>
+				<div class="card-info">
+					<h3>celestial</h3>
+					<p>first attempt at celestial by Joseph Hwang</p>
+				</div>
+			</div>
+
+			<!-- origami item 9 -->
+			<div class="gallery-card" onclick="openModal('dimpled model with flowers', '30 units, designed by Meenakshi Mukerji: <a href=\'https://origamee.net/about/\' target=\'_blank\'>https://origamee.net/about/</a>', ['images/2dmwflowers.png', 'images/2dmwflowers2.jpeg'], '~3 hours', 'April 2025')">
+				<div class="image-placeholder">
+					<img src="images/2dmwflowers.png" alt="dmwflowers">
+				</div>
+				<div class="card-info">
+					<h3>dimpled model with flowers</h3>
+					<p>designed by Meenakshi Mukerji</p>
+				</div>
+			</div>
+
+			<!-- origami item 10 -->
+			<!-- <div class="gallery-card" onclick="openModal('etna variation', 'made this a while ago with some scrap paper, variation of Etna Kusudama by Maria Sinayskaya', ['images/etnavariation.png', 'images/etnavariation.png'], '~2 hours', '2025')">
+				<div class="image-placeholder">
+					<img src="images/etnavariation.png" alt="etnavariation">
+				</div>
+				<div class="card-info">
+					<h3>etna variation</h3>
+					<p>scrap paper fun</p>
+				</div>
+			</div> -->
+
+
+			<!-- origami item 12 -->
+			<!-- <div class="gallery-card" onclick="openModal('sphinx', '30 units, made with scrap paper, designed by Joseph Hwang: <a href=\'https://www.josephhwangorigami.com/modular#/sphinx/\' target=\'_blank\'>https://www.josephhwangorigami.com/modular#/sphinx/</a>', ['images/sphinx.png', 'images/sphinx2.jpeg', 'images/sphinx3.jpeg'], '~3 hours', '2025')">
+				<div class="image-placeholder">
+					<img src="images/sphinx.png" alt="sphinx">
+				</div>
+				<div class="card-info">
+					<h3>sphinx</h3>
+					<p>designed by Joseph Hwang</p>
+				</div>
+			</div> -->
+
+			<!-- origami item 13 -->
+			<div class="gallery-card" onclick="openModal('bascetta star', '30 unit bascetta star, designed by Paolo Bascetta', ['images/2bascetta.png', 'images/2bascetta1.jpeg'], '~2 hours', 'July 2024')">
+				<div class="image-placeholder">
+					<img src="images/2bascetta.png" alt="bascetta">
+				</div>
+				<div class="card-info">
+					<h3>bascetta star</h3>
+					<p>30 unit bascetta star again</p>
+				</div>
+			</div>
+
+			<!-- origami item 14 -->
+			<div class="gallery-card" onclick="openModal('bascetta stars x3', '30 unit bascetta stars, designed by Paolo Bascetta', ['images/3bascetta.png', 'images/3bascetta1.jpeg', 'images/3bascetta2.jpeg', 'images/3bascetta3.jpeg'], '~6 hours', '2024-2026')">
+				<div class="image-placeholder">
+					<img src="images/3bascetta.png" alt="bascetta">
+				</div>
+				<div class="card-info">
+					<h3>bascetta stars</h3>
+					<p>guess what my favourite modular origami model is</p>
+				</div>
+			</div>
+
+			<!-- origami item 15 -->
+			<div class="gallery-card" onclick="openModal('bascetta star', '30 unit bascetta star, designed by Paolo Bascetta', ['images/1bascetta.png', 'images/1bascetta2.jpeg'], '~2 hours', 'May 2024')">
+				<div class="image-placeholder">
+					<img src="images/1bascetta.png" alt="bascetta">
+				</div>
+				<div class="card-info">
+					<h3>bascetta star</h3>
+					<p>first attempt at bascetta star</p>
+				</div>
+			</div>
+
+			<!-- origami item 16 -->
+			<div class="gallery-card" onclick="openModal('sonobe variant', '30 units, icosahedron with modified sonobe units', ['images/2sonobevariant.png', 'images/2sonobevariant2.jpeg'], '~2 hour', 'December 2023')">
+				<div class="image-placeholder">
+					<img src="images/2sonobevariant.png" alt="sonobevariant">
+				</div>
+				<div class="card-info">
+					<h3>sonobe variant</h3>
+					<p>30 modified sonobe units</p>
+				</div>
+			</div>
+
+			<!-- origami item 17 -->
+			<div class="gallery-card" onclick="openModal('sonobe variant', '30 units, icosahedron with modified sonobe units', ['images/sonobevariant.png', 'images/sonobevariant2.jpeg'], '~2 hour', 'November 2023')">
+				<div class="image-placeholder">
+					<img src="images/sonobevariant.png" alt="sonobevariant">
+				</div>
+				<div class="card-info">
+					<h3>sonobe variant</h3>
+					<p>30 modified sonobe units</p>
+				</div>
+			</div>
+
+			<!-- origami item 18 -->
+			<div class="gallery-card" onclick="openModal('where it all began', 'first ever modular origami piece i made, 30 sonobe units ft. duck', ['images/1sonobe.png', 'images/1sonobe2.jpeg', 'images/1sonobe3.jpeg'], '~2 hour', '2022')">
+				<div class="image-placeholder">
+					<img src="images/1sonobe.png" alt="sonobe">
+				</div>
+				<div class="card-info">
+					<h3>30 sonobe units</h3>
+					<p>where it all began :)</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<div id="origamiModal" class="modal" onclick="closeModal(event)">
+		<div class="modal-content">
+			<span class="close-btn" onclick="closeModal(event)">&times;</span>
+			<div class="modal-layout">
+				<div class="modal-preview">
+					<img id="modalImg" src="" alt="" onerror="this.style.display='none';">
+					<video id="modalVideo" src="" controls autoplay loop muted playsinline style="display:none; width:100%; height:100%; object-fit:contain; position:absolute; z-index:6; padding:1rem;"></video>
+					<button class="nav-btn prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+					<button class="nav-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
+					<div id="slideDots" class="slide-dots"></div>
+				</div>
+                
+				<div class="modal-details">
+					<h3 id="modalTitle">Item Title</h3>
+					<p id="modalDesc">Detailed description goes here.</p>
+					<hr class="modal-divider">
+					<div class="modal-meta">
+						<p><strong>Time Spent:</strong> <span id="modalTime"></span></p>
+						<p><strong>Date:</strong> <span id="modalDate"></span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<p>© 2026 Heather Xu</p>
+		<p>Hosted on <a href="https://github.com/hjjxxu" target="_blank">github pages</a></p>
+	</footer>
+
+	<script>
+		const toggle = document.getElementById('theme-toggle');
+		toggle.addEventListener('click', (e) => {
+			e.preventDefault();
+			document.body.classList.toggle('dark-theme');
+		});
+
+		let currentImages = [];
+		let currentImageIndex = 0;
+
+		const modal = document.getElementById('origamiModal');
+		const modalImg = document.getElementById('modalImg');
+		const modalVideo = document.getElementById('modalVideo');
+		const prevBtn = document.querySelector('.prev-btn');
+		const nextBtn = document.querySelector('.next-btn');
+		const dotsContainer = document.getElementById('slideDots');
+
+		function openModal(title, description, imageArray, timeSpent, dateCreated) {
+			document.getElementById('modalTitle').innerText = title;
+			document.getElementById('modalDesc').innerHTML = description;
+			document.getElementById('modalTime').innerText = timeSpent;
+			document.getElementById('modalDate').innerText = dateCreated;
+    
+			currentImages = imageArray || [];
+			currentImageIndex = 0;
+    
+			setupSlideshow();
+			modal.classList.add('active');
+			document.body.style.overflow = 'hidden'; 
+		}
+
+
+		function setupSlideshow() {
+			dotsContainer.innerHTML = '';
+			if (currentImages.length <= 1) {
+				prevBtn.style.display = 'none';
+				nextBtn.style.display = 'none';
+				displayMedia(currentImages);
+				return;
+			}
+			prevBtn.style.display = 'block';
+			nextBtn.style.display = 'block';
+            
+			currentImages.forEach((_, idx) => {
+				const dot = document.createElement('span');
+				dot.classList.add('dot');
+				if (idx === 0) dot.classList.add('active');
+				dot.addEventListener('click', () => goToSlide(idx));
+				dotsContainer.appendChild(dot);
+			});
+
+			updateSlideDisplay();
+		}
+
+		function updateSlideDisplay() {
+			displayMedia(currentImages[currentImageIndex]);
+			const dots = document.querySelectorAll('.dot');
+			dots.forEach((dot, idx) => {
+				if (idx === currentImageIndex) dot.classList.add('active');
+				else dot.classList.remove('active');
+			});
+		}
+
+		function displayMedia(mediaUrl) {
+			if (!mediaUrl) {
+				modalImg.style.display = 'none';
+				modalVideo.style.display = 'none';
+				return;
+			}
+
+			const isVideo = mediaUrl.toLowerCase().endsWith('.mp4') || mediaUrl.toLowerCase().endsWith('.webm');
+            
+			if (isVideo) {
+				modalImg.style.display = 'none';
+				modalVideo.src = mediaUrl;
+				modalVideo.style.display = 'block';
+				modalVideo.load();
+                
+				// force browser to run video smoothly
+				modalVideo.play().catch(error => console.log("Playback error or permission restriction: ", error));
+			} else {
+				modalVideo.style.display = 'none';
+				modalVideo.pause(); // cuts audio instantly if leaving video slide
+				modalVideo.src = ''; 
+				modalImg.src = mediaUrl;
+				modalImg.style.display = 'block';
+			}
+		}
+
+
+		function changeSlide(direction) {
+			currentImageIndex += direction;
+			if (currentImageIndex >= currentImages.length) currentImageIndex = 0;
+			if (currentImageIndex < 0) currentImageIndex = currentImages.length - 1;
+			updateSlideDisplay();
+		}
+
+		function goToSlide(index) {
+			currentImageIndex = index;
+			updateSlideDisplay();
+		}
+
+		function closeModal(event) {
+			if (event.target === modal || event.target.classList.contains('close-btn')) {
+				modal.classList.remove('active');
+				document.body.style.overflow = 'auto';
+				modalVideo.pause();
+				modalVideo.src = '';
+				document.body.style.overflow = 'auto'; 
+			}
+		}
+	</script>
 </body>
 </html>
