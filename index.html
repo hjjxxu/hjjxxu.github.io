@@ -291,57 +291,25 @@
 		const dotsContainer = document.getElementById('slideDots');
 
 		// automatically cache slideshow assets at the beginning
-        window.addEventListener('DOMContentLoaded', () => {
-            const assetsToPreload = [
-                'images/1bascetta.png', 
-                'images/1bascetta2.jpeg',
-                'images/1dmwflowers.png', 
-                'images/1dmwflowers2.png',
-                'images/1sonobe.png', 
-                'images/1sonobe2.jpeg',
-                'images/1sonobe3.jpeg',
-				'images/2bascetta.png',
-				'images/2bascetta1.jpeg',
-				'images/2dmwflowers.png',
-				'images/2dmwflowers2.jpeg',
-				'images/2sonobevariant.png',
-				'images/2sonobevariant2.jpeg',
-				'images/3bascetta.png',
-				'images/3bascetta1.jpeg',
-				'images/3bascetta2.jpeg',
-				'images/3bascetta3.jpeg',
-				'images/avatar.jpeg',
-				'images/buckyball.png',
-				'images/buckyball2.jpeg',
-				'images/celestial.png',
-				'images/celestial2.jpg',
-				'images/celestialw.png',
-				'images/celestialw2.jpeg',
-				'images/etnavariation.png',
-				'images/etnavariation2.png',
-				'images/flowerkusudama.png',
-				'images/flowerkusudama2.jpeg',
-				'images/flowerkusudamaassembly.jpg',
-				'images/paradigma.png',
-				'images/paradigma2.jpeg',
-				'images/paradigma3.jpeg',
-				'images/paradigma4.mp4',
-				'images/sonobevariant.png',
-				'images/sonobevariant2.jpeg',
-				'images/sphinx.png',
-				'images/sphinx2.jpeg',
-				'images/sphinx3.jpeg',
-				'images/tor.png',
-				'images/tor2.jpeg',
-				'images/tor3.jpeg',
-				'images/torus.png',
-				'images/torus2.jpeg',
-				'images/torus3.jpeg'
-            ];
+		window.addEventListener('DOMContentLoaded', () => {
+            const allImagesToPreload = [];
+            
+            document.querySelectorAll('.gallery-card').forEach(card => {
+                const onclickAttr = card.getAttribute('onclick');
+                if (onclickAttr) {
+                    const match = onclickAttr.match(/\[(.*?)\]/);
+                    if (match && match[1]) {
+                        const paths = match[1].split(',').map(p => p.replace(/['"\s&apos;]/g, ''));
+                        allImagesToPreload.push(...paths);
+                    }
+                }
+            });
 
-            assetsToPreload.forEach(path => {
-                const img = new Image();
-                img.src = path;
+            allImagesToPreload.forEach(path => {
+                if (!path.toLowerCase().endsWith('.mp4') && !path.toLowerCase().endsWith('.webm')) {
+                    const img = new Image();
+                    img.src = path;
+                }
             });
         });
 
