@@ -238,7 +238,7 @@ body.dark-theme .image-placeholder { background: #1a1a1f; }
 
 .card-info h3 {
 	font-family: 'thin font', sans-serif;
-	font-size: 1rem;
+	font-size: 1.15rem;
 	margin-bottom: 0.5rem;
 	-webkit-text-stroke: 0.45px;
 }
