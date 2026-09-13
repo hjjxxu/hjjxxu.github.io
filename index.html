@@ -6,6 +6,17 @@
 	<title>heather xu origami</title>
 	<link rel="icon" type="image/png" href="images/torus.png">
 	<link rel="stylesheet" href="style.css">
+
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q5B1NLKQ3E"></script>
+	<script>
+  		window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+
+  		gtag('config', 'G-Q5B1NLKQ3E');
+	</script>
 </head>
 
 <body class="dark-theme">
@@ -34,7 +45,6 @@
 			</div>
 		</header>
 	</div>
-
 
 	<div class="gallery-container">
 		<h2>My Creations Gallery</h2>
@@ -74,13 +84,13 @@
 			</div>
 
 			<!-- origami item 4 -->
-			<div class="gallery-card" onclick="openModal('flower kusudama', '60 pieces of paper, twelve flowers - five pieces of paper per flower, requires glue', ['images/flowerkusudama.png', 'images/flowerkusudama2.jpeg', 'images/flowerkusudamaassembly.jpg'], '~3 hours', 'December 2022')">
+			<div class="gallery-card" onclick="openModal('flower kusudama', '60 pieces of paper, twelve flowers - five petals per flower, glued together to resemble a dodecahedron', ['images/flowerkusudama.png', 'images/flowerkusudama2copy.jpeg', 'images/flowerkusudamaassembly.jpg'], '~3 hours', 'December 2022')">
 				<div class="image-placeholder">
 					<img src="images/flowerkusudama.png" alt="flower kusudama">
 				</div>
 				<div class="card-info">
 					<h3>flower kusudama</h3>
-				<p>twelve flowers</p>
+				<p>twelve flowers glued to make a dodecahedron</p>
 				</div>
 			</div>
 
@@ -229,12 +239,12 @@
 			</div>
 
 			<!-- origami item 18 -->
-			<div class="gallery-card" onclick="openModal('where it all began', 'first ever modular origami piece i made, 30 sonobe units ft. duck', ['images/1sonobe.png', 'images/1sonobe2.jpeg', 'images/1sonobe3.jpeg'], '~2 hour', '2022')">
+			<div class="gallery-card" onclick="openModal('where it all began :)', 'first ever modular origami piece i made, 30 sonobe units ft. duck', ['images/1sonobe.png', 'images/1sonobe2.jpeg', 'images/1sonobe3.jpeg'], '~2 hour', '2022')">
 				<div class="image-placeholder">
 					<img src="images/1sonobe.png" alt="sonobe">
 				</div>
 				<div class="card-info">
-					<h3>30 sonobe units</h3>
+					<h3>30 sonobe unit icosahedron</h3>
 					<p>where it all began :)</p>
 				</div>
 			</div>
@@ -356,7 +366,7 @@
     
 			setupSlideshow();
 			modal.classList.add('active');
-			document.body.style.overflow = 'hidden'; 
+			// document.body.style.overflow = 'hidden'; 
 		}
 
 
@@ -433,10 +443,9 @@
 		function closeModal(event) {
 			if (event.target === modal || event.target.classList.contains('close-btn')) {
 				modal.classList.remove('active');
-				document.body.style.overflow = 'auto';
 				modalVideo.pause();
 				modalVideo.src = '';
-				document.body.style.overflow = 'auto'; 
+				document.body.style.overflow = 'auto'; // will this work?
 			}
 		}
 	</script>
